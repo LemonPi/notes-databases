@@ -8,14 +8,21 @@
     Relational Databases
 -----------------------------------------------------------
 - major entities or subjects become a table
+	- sets of tables inside a database
 - information items become columns in the table
 - each table has primary keys which is a column or set of columns
 	- uniquely identifies each row
 	- most efficient querying method
+- foreign key is a unique reference from one row to another row
+	- can be rows from different tables
+- SQL is the langauge for managing data in relational DBs
 
 -----------------------------------------------------------
     ORM
 -----------------------------------------------------------
+- specific library for a particularly language
+	eg. SQLAlchemy and Django ORM for python
+	- probably better to learn SQL since it's language independent
 - object relational mapping
 - converts data between incompatible type systems
 	- DBs often can only store scalar values
