@@ -1,0 +1,26 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- core activity is to classify data and identify interrelationships
+- most commonly used are relational databases
+
+-----------------------------------------------------------
+    Relational Databases
+-----------------------------------------------------------
+- major entities or subjects become a table
+- information items become columns in the table
+- each table has primary keys which is a column or set of columns
+	- uniquely identifies each row
+	- most efficient querying method
+
+-----------------------------------------------------------
+    ORM
+-----------------------------------------------------------
+- object relational mapping
+- converts data between incompatible type systems
+	- DBs often can only store scalar values
+	- translate logical representation of objects into atomized form
+		- object can be reloaded
+		- persistent objects
+- point is to reduce boiler plate code
+- high abstraction may lead to poor design
