@@ -18,6 +18,25 @@
 - SQL is the langauge for managing data in relational DBs
 
 -----------------------------------------------------------
+    NoSQL
+-----------------------------------------------------------
+- alternatives to relational databases
+	- data not modelled as tabular relations
+		- key-value
+		- wide column
+		- graph
+		- document
+- united only in their rejection of the relational model
+- motivation
+	- simplicity
+	- horizontal scaling to more machines
+	- finer control on availability
+- weakness is consistency
+	- database changes are slowly propagated
+	- queries might be on old data
+	- data loss and lost writes
+
+-----------------------------------------------------------
     ORM
 -----------------------------------------------------------
 - specific library for a particularly language
