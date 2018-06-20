@@ -1,0 +1,27 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- almost all use SQL
+- each database is composed of tables
+	- columns of table represents attributes
+	- rows of table represent instance/record/tuple
+	- each table represents one entity type 
+- each row has a unique key (primary key - PK)
+	- rows in table linked to rows in other tables by them having PK in a column
+	- system performance is optimized for PK
+- each response to a query is a #view# or #result set#
+
+-----------------------------------------------------------
+     Transactions
+-----------------------------------------------------------
+ 
+-----------------------------------------------------------
+     Stored procedures
+-----------------------------------------------------------
+- can reduce system info I/O
+- increase security by granting access only to stored procedures
+	- can't touch data directly
+
+
+ 
+  
