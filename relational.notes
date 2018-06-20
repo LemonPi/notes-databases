@@ -20,6 +20,37 @@
 	- each view can be called a #derived relation#
 
 -----------------------------------------------------------
+    Abstraction levels
+-----------------------------------------------------------
+1. conceptual schema
+	- describes main concepts and relationships among them (semantics)
+	- no references to technology
+	- non-technical names
+2. logical model
+	- concerned with business rules
+	- uses business names
+	- describes using data structures 
+		- entities (tables)
+		- attributes (columns)
+		- relationships (keys)
+	- anticipates implementation on a platform, so must be adjusted to achieve efficiency
+	- several common approaches
+		1. hiearchical
+		2. network
+		3. relational (SQL)
+		4. object-oriented (NoSQL)
+3. physical model
+	- implementation of the logical model
+	- uses a database engine (Oracle, MySQL, ...)
+	- describes using technology specific primitives
+		- tables
+		- columns
+		- valdiation rules
+		- access constraints
+		- stored procedures
+	- primary/alternate keys
+
+-----------------------------------------------------------
      Transactions
 -----------------------------------------------------------
  
