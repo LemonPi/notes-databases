@@ -6,6 +6,8 @@
 	- each table can be called a #relation#
 		- set of tuples that have the same attributes
 		- each table stores data and is called a #base relation#
+		- distinction is that relation is a set while a table is a multiset
+			- table usually allows duplicates while a relation does not
 	- columns of table represents attributes
 	- rows of table represent instance/record/tuple
 	- each table represents one entity type 
@@ -61,6 +63,32 @@
 - increase security by granting access only to stored procedures
 	- can't touch data directly
 
-
- 
-  
+-----------------------------------------------------------
+    Operations
+-----------------------------------------------------------
+based on set operations
+1. union (relation, relation)
+	- combines tuples of two relations
+	- removes duplicate tuples
+	- maps to SQL UNION
+2. intersection (relation, relation)
+	- produce set of tuples two relations share
+	- maps to SQL INTERSECT
+3. difference (relation, relation)
+	- produce set of tuples from the first relation not in the second one
+	- maps to SQL EXCEPT or MINUS
+4. cartesian product (relation, relation)
+	- produce set of tuples that includes every combination of tuples from the two relations
+	- maps to SQL cross join operator
+specific to relational DBs
+5. selection (relation)
+	- retrieve tuples from a relation restricted to meeting a condition
+	- maps to SQL SELECT with a WHERE clause
+6. projection (tuples)
+	- extract specified attributes from a set of tuples
+7. join (relation, relation)
+	- two relations connected by common attributes
+	- maps to SQL INNER JOIN
+	- N-1 inner joins required for N tables in an SQL query to avoid cartesian product
+8. division
+	- partition second relation with tuples of first relation
