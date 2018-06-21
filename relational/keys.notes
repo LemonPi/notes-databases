@@ -1,0 +1,31 @@
+-----------------------------------------------------------
+    Unique Key
+-----------------------------------------------------------
+- #minimal# #superkey# for a relation
+	1. relation does not have two tuples with same value of key
+	2. minimal: no proper subset of attributes allows condition 1. to hold
+- keys are by definition unique so "unique key" is a pleonasm
+- table may have >1 candidate keys
+	- one per table designated primary key
+	- others called alternate keys
+- keys may consist of >=1 attributes
+- types:
+	simple: made of 1 attribute
+	concatenated: >1 attribute joined together as a single key
+	compound: >1 attributes or simiple keys
+	composite: >=1 compound key + >=1 attribute or simple key 
+		- extension of compound
+	natural: key composed of data rather than system generated
+	surrogate: artificial key 
+		- usually numeric ID 
+		- used for performance reasons
+	candidate: a key that may become the primary key
+	primary: the key selected as the primary key
+		- cannot allow NULL
+		- only 1 key can be primary
+		- allowed to migrate to other entities to become a foreign key
+		- most used to access table
+		- used in joining tables when SELECTing
+	alternate: non-primary unique key
+		- can be used like a primary key in SELECT
+	foreign: unique key that migrated to another entity
