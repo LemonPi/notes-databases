@@ -67,26 +67,33 @@
     Operations
 -----------------------------------------------------------
 based on set operations
-1. union (relation, relation)
+1. union (R, R)
+	- relations must have same set of attributes
 	- combines tuples of two relations
 	- removes duplicate tuples
 	- maps to SQL UNION
-2. intersection (relation, relation)
+2. intersection (R, R)
+	- relations must have same set of attributes
 	- produce set of tuples two relations share
 	- maps to SQL INTERSECT
-3. difference (relation, relation)
+3. difference (R, R)
+	- relations must have same set of attributes
 	- produce set of tuples from the first relation not in the second one
 	- maps to SQL EXCEPT or MINUS
-4. cartesian product (relation, relation)
+4. cartesian product (R, S)
+	- relations must have disjoint set of attributes
 	- produce set of tuples that includes every combination of tuples from the two relations
+		- n-tuples x m-tuples produces (n+m)-tuples instead of 2-tuples
 	- maps to SQL cross join operator
 specific to relational DBs
 5. selection (relation)
 	- retrieve tuples from a relation restricted to meeting a condition
 	- maps to SQL SELECT with a WHERE clause
-6. projection (tuples)
+6. projection (R)
 	- extract specified attributes from a set of tuples
-7. join (relation, relation)
+	- default map to SQL returns multiset
+		- use DISTINT to eliminate duplicate
+7. join (R, S)
 	- two relations connected by common attributes
 	- maps to SQL INNER JOIN
 	- N-1 inner joins required for N tables in an SQL query to avoid cartesian product
