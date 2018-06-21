@@ -1,0 +1,8 @@
+-----------------------------------------------------------
+     Stored procedures
+-----------------------------------------------------------
+- can reduce system info I/O
+- increase security by granting access only to stored procedures
+	- can't touch data directly
+
+
