@@ -119,3 +119,24 @@ specific to relational DBs
 	- maintaining relations of R is called a left semijoin
 	- equivalent to projection(a1..an)(R join S) where a1..an are attributes of R
 - antijoin is like a semijoin but only those tuples for which no tuple in S shares value
+
+-----------------------------------------------------------
+    Common Extension Operators
+-----------------------------------------------------------
+- outer join
+	- left, right, full outer joins
+	- like inner join
+		- but tuples without matching values from the other relation are replaced by NULL
+		- instead of removed
+	- left outer join has all tuples of R
+	- full outer join is left outer join union with right outer join
+- extended projection
+	- computations on data domains
+		eg. multiply numbers from two columns with SELECTION a * b AS c FROM t
+- aggregation
+	- computing functions on a columns
+		- sum
+		- count
+		- average
+		- max
+		- min
