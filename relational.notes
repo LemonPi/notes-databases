@@ -95,7 +95,27 @@ specific to relational DBs
 		- use DISTINT to eliminate duplicate
 7. join (R, S)
 	- two relations connected by common attributes
+	- relational counterpart of AND
+	- allows combination of relations associated by a foreign key
+		- degenerates to cartesian product when there are no shared attributes
 	- maps to SQL INNER JOIN
 	- N-1 inner joins required for N tables in an SQL query to avoid cartesian product
-8. division
+8. division (R, S)
+	- R attributes must be a superset of S's
 	- partition second relation with tuples of first relation
+	- not mapped to SQL
+	- produces R tuples restricted to unique R attributes such that all their combinations
+	of with tuples in S are in R
+
+-----------------------------------------------------------
+    Derived Operations
+-----------------------------------------------------------
+- only need set operations, projection, selection, and rename as primitive operations
+- natural join can be simulated from those primitive operations
+- theta-join is an inner join with some condition theta {<, ≤, =, >, ≥}
+	- R and S (the relations) must have disjoint attributes
+	- equivalent to selection(theta)(R x S)
+- semijoin is an inner join but do not include attributes of the other relation
+	- maintaining relations of R is called a left semijoin
+	- equivalent to projection(a1..an)(R join S) where a1..an are attributes of R
+- antijoin is like a semijoin but only those tuples for which no tuple in S shares value
