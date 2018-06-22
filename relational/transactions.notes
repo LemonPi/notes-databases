@@ -39,5 +39,16 @@
 		- recorded in non-volatile memory
 
 -----------------------------------------------------------
-     Transactions
+     Transaction Implementation
 -----------------------------------------------------------
+- two popular family of techniques (both use locks)
+	1. write-ahead logging
+		- copy original data to a log before change
+		- allows recovery in case of a crash
+	2. shadowing
+		- updates applied to partial copy of DB
+		- new copy activated when transaction commits
+- multiversion concurrency control is an alternative to locking
+	- provide each read transaction the unmodified version of data at the time
+	- no blocking between writes and reads
+	- writes block writes
