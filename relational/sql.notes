@@ -87,3 +87,44 @@
 			- left to right
 		2. NULLIF(x1,x2)
 			CASE WHEN x1 = x2 THEN NULL ELSE x1 END
+
+-----------------------------------------------------------
+    Queries
+-----------------------------------------------------------
+- SELECT data from one or more tables or expressions
+- includes list of columns to include in result
+	- normally immediately after SELECT keyword
+	- "*" used to specify all
+- may apply optional clauses
+	- FROM
+		- indicates table(s) to retrieve from
+		- can include JOIN subclauses
+	- WHERE
+		- restrict rows returned by query
+		- eliminate rows where predicate is not TRUE
+	- GROUP BY
+		- projects rows with common value to smaller set of rows
+		- applied after WHERE clause
+	- HAVING
+		- predicate filter for rows resulting from GROUP BY 
+		- can use aggregate functions as predicate
+	- ORDER BY
+		- specify column(s) to sort resulting data
+		- specify direction of sorting
+		- without ORDER BY order of rows is undefined
+	- DISTINT
+		- eliminates duplicate data
+	- LIMIT
+		- specify number of records to return
+		- not universally supported
+- execution order
+	5. SELECT <columns>
+	1. FROM <table>
+	2. WHERE <predicate on rows>
+	3. GROUP BY <columns>
+	4. HAVING <predicate on groups>
+	6. ORDER BY <columns>
+- can have subqueries inside a query
+	- can name subqueries WITH
+		- called #common table expressions#
+	- can recursively refer to themselves
