@@ -147,3 +147,37 @@
 	- NOT
 		- NOT NULL = NULL
 
+-----------------------------------------------------------
+    Manipulation (DML)
+-----------------------------------------------------------
+- add, update, and delete data
+- INSERT
+	- adds rows to an existing table
+	eg. INSERT INTO example (c1, c2, c3) VALUES ('test', 'N', NULL)
+- UPDATE
+	- modifies a set of existing rows
+	eg. UPDATE example SET c1 = 'updated' WHERE c2 = 'N'
+- DELETE
+	- remove existing rows from table
+	eg. DELETE FROM example WHERE c2 = 'N'
+- MERGE
+	- combine data of mutliple tables
+	- combines INSERT and UPDATE
+	eg. MERGE INTO table USING table_reference ON (condition)
+		WHEN MATACHED THEN 
+		UPDATE SET c1 = value1 [, c2 = value2 ...]
+		WHEN NOT MATCHED THEN
+		INSERT (c1 [, c2 ...]) VALUES (value1 [, value2 ...])
+- transactions wrap DML operations
+	- START TRANSACTION
+		- or BEGIN WORK
+		- or BEGIN TRANSACTION
+		- depends on implementation
+	- SAVE TRANSACTION
+		- or SAVEPOINT
+		- allows ROLLBACK to a save point
+	- COMMIT
+		- make all changes in a transaction permanent
+	- ROLLBACK
+		- discards all changes since last COMMIT or ROLLBACK
+	- COMMIT and ROLLBACK ends transaction
