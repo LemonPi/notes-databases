@@ -153,13 +153,13 @@
 - add, update, and delete data
 - INSERT
 	- adds rows to an existing table
-	eg. INSERT INTO example (c1, c2, c3) VALUES ('test', 'N', NULL)
+	eg. INSERT INTO example (c1, c2, c3) VALUES ('test', 'N', NULL);
 - UPDATE
 	- modifies a set of existing rows
-	eg. UPDATE example SET c1 = 'updated' WHERE c2 = 'N'
+	eg. UPDATE example SET c1 = 'updated' WHERE c2 = 'N';
 - DELETE
 	- remove existing rows from table
-	eg. DELETE FROM example WHERE c2 = 'N'
+	eg. DELETE FROM example WHERE c2 = 'N';
 - MERGE
 	- combine data of mutliple tables
 	- combines INSERT and UPDATE
@@ -167,7 +167,7 @@
 		WHEN MATACHED THEN 
 		UPDATE SET c1 = value1 [, c2 = value2 ...]
 		WHEN NOT MATCHED THEN
-		INSERT (c1 [, c2 ...]) VALUES (value1 [, value2 ...])
+		INSERT (c1 [, c2 ...]) VALUES (value1 [, value2 ...]);
 - transactions wrap DML operations
 	- START TRANSACTION
 		- or BEGIN WORK
@@ -181,3 +181,25 @@
 	- ROLLBACK
 		- discards all changes since last COMMIT or ROLLBACK
 	- COMMIT and ROLLBACK ends transaction
+
+-----------------------------------------------------------
+    Definition (DDL)
+-----------------------------------------------------------
+- manages table and index structure
+- CREATE
+	- creates an object (table)
+- ALTER
+	- modify structure of an existing object
+		eg. adding column to table
+		eg. ALTER TABLE example ADD c4 INTEGER NOT NULL;
+- TRUNCATE
+	- deletes all data from a table very quickly without deleting the table
+	- not logged
+		- can't be rolled back unlike DELETE
+	eg. TRUNCATE TABLE example;
+- DROP
+	- deletes object permanently
+	eg. DROP TABLE exmaple;
+- data types
+	- defined by standard, but each implementation may have different name/behaviour
+	- too many to reasonably implement/list
