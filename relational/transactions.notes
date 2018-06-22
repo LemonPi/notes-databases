@@ -1,7 +1,42 @@
 -----------------------------------------------------------
     ACID
 -----------------------------------------------------------
-
+- set of properties of DB transactions
+	- intended to guarantee validity in case of errors
+	- a #transaction# can be defined as a sequence of operations satisfying these properties
+	atomicity:
+		- transaction either succeeds or fails completely
+		- DB left unchanged upon any failure
+	consistency:
+		- DB must always be in a valid state
+		- constraints satisfied
+		- integrity check that a row whose primary key is referred to as a foreign key cannot be removed
+	isolation:
+		- any concurrent transaction must behave as if they were executed sequentially
+		- tradeoff between:
+			- lower isolation reduces blocks but increases potential of bad concurrency effects
+			- higher isolation is safer but leads to more blocking
+		- ANSI anomaly isolation levels
+			- serializable (highest)
+				- locks for both read and write until end of transaction
+				- range locks for SELECT WHERE
+					- avoids phantom reads (foreign write between two reads in another transaction)
+			- repeatable reads
+				- read and write locks but no range locks
+			- read committed
+				- write locks until end of transaction
+				- read locks until SELECT operation is performed
+					- prevents seeing any uncommitted 'dirty' reads
+					- data is free to change after it's read
+			- read uncommitted
+				- dirty reads are allowed
+				- no locks...
+		- criticism for ANSI anomaly isolation levels
+			- assumes lockings schema for concurrency control
+				- discredits optimistic or multi-version scheme
+	durability:
+		- completed transactions remain completed
+		- recorded in non-volatile memory
 
 -----------------------------------------------------------
      Transactions
