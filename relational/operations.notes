@@ -47,6 +47,8 @@ specific to relational DBs
 -----------------------------------------------------------
 - only need set operations, projection, selection, and rename as primitive operations
 - natural join can be simulated from those primitive operations
+	- natural joins have terrible performance and shouldn't be used
+	- attribute names being the same on different tables may not have same meaning
 - theta-join is an inner join with some condition theta {<, ≤, =, >, ≥}
 	- R and S (the relations) must have disjoint attributes
 	- equivalent to selection(theta)(R x S)
