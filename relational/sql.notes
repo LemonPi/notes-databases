@@ -32,30 +32,58 @@
 		- semicolon terminator
 	- whitespace
 		- insignificant
-- operators
-	- =
-	- <>
-		- not equal to
-		- many implementations also accept !=
-	- >
-	- <
-	- >=
-	- <=
-	- BETWEEN
-		- between an inclusive range
-	- LIKE
-		- begins a character pattern
-			eg. name LIKE "Will%"
-		- contains a character pattern
-			eg. name LIKE "%Will%"
-	- IN
-		- equal to one of many
-			eg. DeptCode IN (1,2,5)
-	- IS [NOT] NULL
-		- comparison to NULL
-	- IS [NOT] TRUE or IS [NOT] FALSE
-		- comparison to bool
-	- IS NOT DISTINT FROM
-		- equal to value or both are nulls
-	- AS
-		- column rename when viewing results
+-----------------------------------------------------------
+    Operators
+-----------------------------------------------------------
+- =
+- <>
+	- not equal to
+	- many implementations also accept !=
+- >
+- <
+- >=
+- <=
+- BETWEEN
+	- between an inclusive range
+- LIKE
+	- begins a character pattern
+		eg. name LIKE "Will%"
+	- contains a character pattern
+		eg. name LIKE "%Will%"
+- IN
+	- equal to one of many
+		eg. DeptCode IN (1,2,5)
+- IS [NOT] NULL
+	- comparison to NULL
+- IS [NOT] TRUE or IS [NOT] FALSE
+	- comparison to bool
+- IS NOT DISTINT FROM
+	- equal to value or both are nulls
+- AS
+	- column rename when viewing results
+- CASE/WHEN/THEN/ELSE/END expression
+	CASE WHEN <predicate>
+			THEN <expression>
+		WHEN <predicate>
+			THEN <expression>
+		ELES <expression>
+	END
+	- always evaluates to an expression
+	- introduced in SQL-92
+	- called "searched case"
+	- can have more than 1 WHEN condition
+	- WHEN conditions tested in order
+	- if ELSE expression is not specified then SQL defaults to ELSE NULL
+	- may use implicit equality comparisons
+		eg. WHEN 1
+	- 2 short form for special CASE expressions
+		1. COALESCE(x1,x2,...)
+			CASE WHEN x1 IS NOT NULL THEN x1
+				WHEN x2 IS NOT NULL THEN x2
+				...
+				ELSE xN
+			END
+			- return value of first non-NULL operand or NULL
+			- left to right
+		2. NULLIF(x1,x2)
+			CASE WHEN x1 = x2 THEN NULL ELSE x1 END
