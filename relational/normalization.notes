@@ -1,0 +1,37 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- restructure a DB
+	- reduce redundancy
+	- improve data integrity
+- normalization usually involves splitting a relation into several relations
+- goals
+	1. reduce modification dependencies
+		- one source of truth
+		- data equality (flat data rather than nested)
+	2. reduce restructuring in response to introduction of new data types
+	3. make relational model more informative to users
+	4. make collection of relations neutral to query statitics
+
+-----------------------------------------------------------
+    Normal forms
+-----------------------------------------------------------
+- measure of degree of normalization
+- all levels must also conform to the previous levels' rules
+- first normal form (1NF)
+	- iff domain of each attribute contains atomic values
+	- each attribute contains only one value (no repeating group)
+		- all multiple instances of a type of data should go in rows
+	- able to uniquely identify a row
+	- every non-key attribute must provide a fact about a "key"
+- second normal form (2NF)
+	- no dependence on a proper subset of any candidate key
+	- often violated when there are mutliple candidate keys
+	- dependence should be specified in a separate relation
+	- every non-key attribute must provide a fact about "whole keys"
+- 3NF
+	- all non-prime attribute non-transitively depends on every key
+		- a non-prime attribute is one that's not part of any candidate keys
+		- non-transitively means the dependence is direct (not through another dependence)
+	- every non-key attribute must provide a fact on "nothing but a key"
+	- at this level usually free of modification anomalies
