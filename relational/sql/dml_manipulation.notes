@@ -5,6 +5,7 @@
 - INSERT
 	- adds rows to an existing table
 	eg. INSERT INTO example (c1, c2, c3) VALUES ('test', 'N', NULL);
+	- can insert multiple rows using INSERT INTO .. SELECT ..
 - UPDATE
 	- modifies a set of existing rows
 	eg. UPDATE example SET c1 = 'updated' WHERE c2 = 'N';
