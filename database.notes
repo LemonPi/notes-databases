@@ -3,7 +3,12 @@
 -----------------------------------------------------------
 - core activity is to classify data and identify interrelationships
 - most commonly used are relational databases
-
+- a database is an organized set of related data
+- acess to a database is provided by database management system (DBMS) software
+	- often called database for brevity
+- both the database and DBMS conform to a particular database model
+	- "database system" refers to the collection (database, database model, DBMS)
+	
 -----------------------------------------------------------
     Relational Databases
 -----------------------------------------------------------
