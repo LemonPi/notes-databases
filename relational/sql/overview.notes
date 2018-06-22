@@ -1,0 +1,90 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- informally split into sublanguages
+	- data query (DQL)
+	- data definition (DDL)
+	- data control (DCL)
+	- data manipulation (DML) 
+- there is a standard for SQL, but most SQL implementations do not conform to it...
+	- standard does not specify indexes and file storage
+- 3 valued logic (3VL)
+	- NULL is neither TRUE nor FALSE
+
+-----------------------------------------------------------
+    Syntax
+-----------------------------------------------------------
+- language elements:
+	- clauses
+		- makes up statements and queries
+		- sometimes optional
+	- expressions
+		- produce either scalar values or tables
+	- predicates
+		- conditions evaluated to 3VL or bool
+		- limit effects of statements and queries
+		- change program flow
+	- queries
+		- retrieve data based on specific criteria
+	- statements
+		- persistent effect on schemata and data
+		- control transactions
+		- semicolon terminator
+	- whitespace
+		- insignificant
+-----------------------------------------------------------
+    Operators
+-----------------------------------------------------------
+- =
+- <>
+	- not equal to
+	- many implementations also accept !=
+- >
+- <
+- >=
+- <=
+- BETWEEN
+	- between an inclusive range
+- LIKE
+	- begins a character pattern
+		eg. name LIKE "Will%"
+	- contains a character pattern
+		eg. name LIKE "%Will%"
+- IN
+	- equal to one of many
+		eg. DeptCode IN (1,2,5)
+- IS [NOT] NULL
+	- comparison to NULL
+- IS [NOT] TRUE or IS [NOT] FALSE
+	- comparison to bool
+- IS [NOT] DISTINT FROM
+	- equal to value or both are nulls
+- AS
+	- column rename when viewing results
+- CASE/WHEN/THEN/ELSE/END expression
+	CASE WHEN <predicate>
+			THEN <expression>
+		WHEN <predicate>
+			THEN <expression>
+		ELES <expression>
+	END
+	- always evaluates to an expression
+	- introduced in SQL-92
+	- called "searched case"
+	- can have more than 1 WHEN condition
+	- WHEN conditions tested in order
+	- if ELSE expression is not specified then SQL defaults to ELSE NULL
+	- may use implicit equality comparisons
+		eg. WHEN 1
+	- 2 short form for special CASE expressions
+		1. COALESCE(x1,x2,...)
+			CASE WHEN x1 IS NOT NULL THEN x1
+				WHEN x2 IS NOT NULL THEN x2
+				...
+				ELSE xN
+			END
+			- return value of first non-NULL operand or NULL
+			- left to right
+		2. NULLIF(x1,x2)
+			CASE WHEN x1 = x2 THEN NULL ELSE x1 END
+

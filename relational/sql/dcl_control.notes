@@ -1,0 +1,10 @@
+-----------------------------------------------------------
+    Control (DCL)
+-----------------------------------------------------------
+- authorize users to access/manipulate data
+- GRANT
+	- allow operations
+	eg. GRANT SELECT, UPDATE ON example TO user1, user2;
+- REVOKE
+	- opposite of GRANT
+	eg. REVOKE SELECT, UPDATE ON example TO user1, user2;

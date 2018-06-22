@@ -1,0 +1,21 @@
+-----------------------------------------------------------
+    Definition (DDL)
+-----------------------------------------------------------
+- manages table and index structure
+- CREATE
+	- creates an object (table)
+- ALTER
+	- modify structure of an existing object
+		eg. adding column to table
+		eg. ALTER TABLE example ADD c4 INTEGER NOT NULL;
+- TRUNCATE
+	- deletes all data from a table very quickly without deleting the table
+	- not logged
+		- can't be rolled back unlike DELETE
+	eg. TRUNCATE TABLE example;
+- DROP
+	- deletes object permanently
+	eg. DROP TABLE exmaple;
+- data types
+	- defined by standard, but each implementation may have different name/behaviour
+	- too many to reasonably implement/list

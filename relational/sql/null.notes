@@ -1,0 +1,17 @@
+-----------------------------------------------------------
+    NULL
+-----------------------------------------------------------
+- represent missing information
+- comparison with NULL (=) results in unknown truth value
+- 3VL truth tables
+	- AND
+		- FALSE AND NULL = FALSE
+		- otherwise anything AND NULL = NULL
+	- OR
+		- TRUE OR anything = TRUE
+		- NULL OR anything but true = NULL
+	- =
+		- NULL = anything = NULL
+		- so 2 NULLs are not equal to each other
+	- NOT
+		- NOT NULL = NULL
