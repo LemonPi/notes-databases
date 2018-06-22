@@ -35,3 +35,23 @@
 		- non-transitively means the dependence is direct (not through another dependence)
 	- every non-key attribute must provide a fact on "nothing but a key"
 	- at this level usually free of modification anomalies
+
+-----------------------------------------------------------
+    Denormalization
+-----------------------------------------------------------
+- improve read performance at the expense of write performance
+- add redundant copies of data or group data
+- normalized DBs may store related relations physically as separate disk files
+	- read will require a slow join across files
+- 2 strategies to denormalize
+	1. (preferred) keep logical design normalized, but allow DBMS to store additional redundant info
+		- DBMS's job to ensure redundant copies are kept consistent
+		- implemented in SQL as indexed views or materialized views
+		- index ensures queries against the view are physically optimized
+	2. (most common) denormalize logical data design
+		- DB designer's responsibility to ensure consistency in denormalized DB
+		- can enforce this with constraints
+			- specify how redundant copies are synchronized
+			- cost of constraints may reduce benefit of denormalization
+- denormalization more common now with increased storage capacity
+- helps with scaling web applications
