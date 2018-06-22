@@ -2,7 +2,9 @@
     NULL
 -----------------------------------------------------------
 - represent missing information
+- denoted ω in database theory
 - comparison with NULL (=) results in unknown truth value
+	- in a WHERE clause comparison should be WHERE i IS NULL
 - 3VL truth tables
 	- AND
 		- FALSE AND NULL = FALSE
@@ -15,3 +17,11 @@
 		- so 2 NULLs are not equal to each other
 	- NOT
 		- NOT NULL = NULL
+
+-----------------------------------------------------------
+    Propagation
+-----------------------------------------------------------
+- math operations on NULL become NULL
+	eg. 10 * NULL = NULL
+- string concatenation also becomes NULL
+	- some implementations ignore NULL
