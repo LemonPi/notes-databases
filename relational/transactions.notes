@@ -52,3 +52,4 @@
 	- provide each read transaction the unmodified version of data at the time
 	- no blocking between writes and reads
 	- writes block writes
+- more efficient for many operations to be inside a transaction
