@@ -57,7 +57,7 @@
 	- comparison to NULL
 - IS [NOT] TRUE or IS [NOT] FALSE
 	- comparison to bool
-- IS NOT DISTINT FROM
+- IS [NOT] DISTINT FROM
 	- equal to value or both are nulls
 - AS
 	- column rename when viewing results
@@ -89,7 +89,7 @@
 			CASE WHEN x1 = x2 THEN NULL ELSE x1 END
 
 -----------------------------------------------------------
-    Queries
+    Queries (DQL)
 -----------------------------------------------------------
 - SELECT data from one or more tables or expressions
 - includes list of columns to include in result
@@ -128,3 +128,22 @@
 	- can name subqueries WITH
 		- called #common table expressions#
 	- can recursively refer to themselves
+
+-----------------------------------------------------------
+    NULL
+-----------------------------------------------------------
+- represent missing information
+- comparison with NULL (=) results in unknown truth value
+- 3VL truth tables
+	- AND
+		- FALSE AND NULL = FALSE
+		- otherwise anything AND NULL = NULL
+	- OR
+		- TRUE OR anything = TRUE
+		- NULL OR anything but true = NULL
+	- =
+		- NULL = anything = NULL
+		- so 2 NULLs are not equal to each other
+	- NOT
+		- NOT NULL = NULL
+
