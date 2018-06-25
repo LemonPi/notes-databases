@@ -68,3 +68,16 @@
 	- exists in a list
 	eg. c1 IN (2,4,5)
 - speeds up query since less data have to be returned
+
+-----------------------------------------------------------
+    Textual restriction clauses (WHERE)
+-----------------------------------------------------------
+- {=, !=, <>}
+	- case sensitive exact string comparison 
+- [NOT] LIKE
+	- case insensitive exact string comparison
+	- '%' matches with 0 or more of any character
+		eg. c1 LIKE "%at%" matches with "at", "attic", "bat"
+	- '_' matches with 1 instance of any character
+		eg. c1 LIKE "an_" matches with "and" but not "an"
+- [NOT] IN
