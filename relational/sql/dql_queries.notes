@@ -56,3 +56,15 @@
 	9. DISTINT
 	10. ORDER BY
 	11. TOP
+
+-----------------------------------------------------------
+    Numerical restriction clauses (WHERE)
+-----------------------------------------------------------
+- standard numerical operators
+	- {=, <, ...}
+- [NOT] BETWEEN .. AND ..
+	- numerical inclusive range
+- [NOT] IN
+	- exists in a list
+	eg. c1 IN (2,4,5)
+- speeds up query since less data have to be returned
