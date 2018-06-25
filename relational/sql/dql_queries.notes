@@ -15,6 +15,11 @@
 	- GROUP BY
 		- projects rows with common value to smaller set of rows
 		- applied after WHERE clause
+		- queries are initially one group
+			- splitting into groups allows aggregate functions to be applied to each separately
+				eg. to get MAX value of each group
+		- groups must be filtered by HAVING instead of WHERE
+			- WHERE is used to filter the all data before grouping
 	- HAVING
 		- predicate filter for rows resulting from GROUP BY 
 		- can use aggregate functions as predicate
