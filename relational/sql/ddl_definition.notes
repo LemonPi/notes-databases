@@ -3,11 +3,23 @@
 -----------------------------------------------------------
 - manages table and index structure
 - CREATE
+	CREATE TABLE tablename (columns) 
 	- creates an object (table)
 - ALTER
+	ALTER TABLE tablename alteration
 	- modify structure of an existing object
 		eg. adding column to table
 		eg. ALTER TABLE example ADD c4 INTEGER NOT NULL;
+	- different implementations support different alterations
+		- common ones include
+			- RENAME TO newtablename
+			- ADD COLUMN c1 columntype
+				- adds null values to every row
+			- RENAME COLUMN c1 TO c2
+			- MODIFY COLUMN c1 columntype
+				- changes column type
+			- DROP COLUMN c1
+
 - TRUNCATE
 	- deletes all data from a table very quickly without deleting the table
 	- not logged
