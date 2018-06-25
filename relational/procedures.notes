@@ -1,6 +1,17 @@
 -----------------------------------------------------------
+    Triggers
+-----------------------------------------------------------
+CREATE TRIGGER name when event ON tablename action
+	- when E {BEFORE, AFTER}
+	- event E {DELETE, INSERT, UPDATE}
+	- action E {FOR EACH ROW BEGIN .. END, FOR EACH STATEMENT BEGIN .. END, WHEN expression BEGIN .. END}
+	- OLD and NEW are special references
+- triggers should be more or less supported by all DBMS
+
+-----------------------------------------------------------
      Stored procedures
 -----------------------------------------------------------
+- very DBMS specific
 - can reduce system info I/O
 - increase security by granting access only to stored procedures
 	- can't touch data directly
