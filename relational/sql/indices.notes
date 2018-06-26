@@ -1,0 +1,16 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- speeds up queries at the cost of disk space
+	- also takes up time to insert to update index
+- PRIMARY KEYs are always indexed
+	- members of composite keys may not necessarily be individually indexed
+		- MySQL uses a balanced tree structure
+			- order of index matters
+			- any prefix of index sequence is indexed
+				eg. index on (a,b,c,d) is also indexed on (a), (a,b), or (a,b,c)
+- integer indices are more effective than char indices
+- index on values with a small domain is useless
+	eg. true/false index is useless
+- index on values to be queried on equality before range
+	eg. WHERE a >= 0 AND b = 1 should be INDEX(b, a)
