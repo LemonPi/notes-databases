@@ -56,6 +56,8 @@
 	9. DISTINT
 	10. ORDER BY
 	11. TOP
+	- means aliases in the SELECT clause are not accessible in clauses steps 1 to 7
+		- some DBMS have extensions that allow this
 
 -----------------------------------------------------------
     Numerical restriction clauses (WHERE)
